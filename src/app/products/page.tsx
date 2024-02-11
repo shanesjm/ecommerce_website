@@ -47,8 +47,8 @@ const productList = [
 function Products(props: any) {
   return (
     <div className="flex flex-nowrap">
-      {productList.map((productDetails) => {
-        return <ProductCard productDetails={productDetails} />;
+      {productList.map((productDetails, key) => {
+        return <ProductCard key={key} productDetails={productDetails} />;
       })}
     </div>
   );
