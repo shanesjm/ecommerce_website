@@ -1,25 +1,30 @@
-// import { ProductType } from "@/app/types/types";
-// import React from "react";
-// import ProductCard from "../product_card/ProductCard";
+import { ProductType } from "@/app/types/types";
+import React from "react";
+import ProductCard from "../product_card/ProductCard";
+import { API_BASE_URL } from "@/app/constants/Constants";
 
 // type ProductListProps = ProductType[];
 
-// export const ProductList = (props: any) => {
-//   console.log({ props });
+async function getProductsList() {
+  const res = await fetch(`${API_BASE_URL}/products`);
+  //   console.log(res.json());
+  return res.json();
+}
 
-//   const { productList } = props;
+export const ProductList = async (props: any) => {
+  //   console.log({ props });
 
-//   return (
-//     <>
-//       {productList.forEach((productDetails) => {
-//         return <ProductCard productDetails={productDetails} />;
-//       })}
-//     </>
-//   );
-// };
+  const productList = await getProductsList();
 
-// // const mapStateToProps = (state) => ({});
+  console.log("productList", productList.products[0]);
 
-// // const mapDispatchToProps = {};
-
-// // export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
+  return (
+    <>
+      <div className="p-10 flex flex-wrap gap-5 justify-center">
+        {productList.products.map((productDetails, key) => {
+          return <ProductCard key={key} productDetails={productDetails} />;
+        })}
+      </div>
+    </>
+  );
+};

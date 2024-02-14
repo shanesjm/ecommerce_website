@@ -1,3 +1,12 @@
+import Link from "next/link";
+
 export default function LandingPage() {
-  return <h1>Landing Page</h1>;
+  return (
+    <>
+      <div>Landing Page</div>
+      <div>
+        <Link href={"/products"}>PRODUCTS</Link>
+      </div>
+    </>
+  );
 }

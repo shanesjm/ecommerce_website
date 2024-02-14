@@ -1,56 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
-import Link from "next/link";
-import ProductCard from "../components/private/product_card/ProductCard";
+import { ProductList } from "../components/private/product_list/ProductList";
 
-const productList = [
-  {
-    id: 1,
-    title: "iPhone 9",
-    description: "An apple mobile which is nothing like apple",
-    price: 549,
-    discountPercentage: 12.96,
-    rating: 4.69,
-    stock: 94,
-    brand: "Apple",
-    category: "smartphones",
-    thumbnail: "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
-    images: [
-      "https://cdn.dummyjson.com/product-images/1/1.jpg",
-      "https://cdn.dummyjson.com/product-images/1/2.jpg",
-      "https://cdn.dummyjson.com/product-images/1/3.jpg",
-      "https://cdn.dummyjson.com/product-images/1/4.jpg",
-      "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
-    ],
-  },
-  {
-    id: 2,
-    title: "iPhone X",
-    description:
-      "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
-    price: 899,
-    discountPercentage: 17.94,
-    rating: 4.44,
-    stock: 34,
-    brand: "Apple",
-    category: "smartphones",
-    thumbnail: "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",
-    images: [
-      "https://cdn.dummyjson.com/product-images/2/1.jpg",
-      "https://cdn.dummyjson.com/product-images/2/2.jpg",
-      "https://cdn.dummyjson.com/product-images/2/3.jpg",
-      "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",
-    ],
-  },
-];
-
-function Products(props: any) {
+function Products() {
   return (
-    <div className="flex flex-nowrap">
-      {productList.map((productDetails, key) => {
-        return <ProductCard key={key} productDetails={productDetails} />;
-      })}
-    </div>
+    <>
+      <div className="row">
+        <ProductList />
+      </div>
+    </>
   );
 }
 
