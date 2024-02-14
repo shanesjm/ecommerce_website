@@ -21,7 +21,7 @@ export const ProductList = async (props: any) => {
   return (
     <>
       <div className="p-10 flex flex-wrap gap-5 justify-center">
-        {productList.products.map((productDetails, key) => {
+        {productList.products.map((productDetails: any, key: any) => {
           return <ProductCard key={key} productDetails={productDetails} />;
         })}
       </div>
